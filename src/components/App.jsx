@@ -1,16 +1,11 @@
 import React from 'react';
-import SongDisplay from './SongDisplay';
-import SongList from './SongList';
-import Header from './Header';
+import Auth from './Auth';
 
 function App(){
   return (
     <div>
-      <Header />
-      <br/>
-      <SongList />
-      <hr/>
-      <SongDisplay />
+      <Auth />
+      <div></div>
     </div>
   );
 }

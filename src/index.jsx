@@ -15,6 +15,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('react-app-root')
 );
-
-
-//d38be6bfc7fe97802dbb8ce0ddde404d
