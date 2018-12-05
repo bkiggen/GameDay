@@ -2,6 +2,7 @@ import React from 'react';
 import config from './../../.env';
 import firebase from 'firebase/app';
 import * as firebaseui from 'firebaseui';
+// import * as gapi from './../../api';
 import CreateCalendarEntry from './CreateCalendarEntry';
 
 class Auth extends React.Component{
@@ -32,6 +33,8 @@ class Auth extends React.Component{
     ui.start('#firebaseui-auth-container', uiConfig);
 
     firebase.auth().onAuthStateChanged(user => {
+      console.log('onAuthStateChanged method fired.');
+      console.log(user);
       if (user) {
         const script = document.createElement('script');
         script.type = 'text/javascript';
@@ -99,12 +102,12 @@ class Auth extends React.Component{
       firstCalendarEntry = this.state.calendarInfo;
     }
     if (this.state.loggedIn) {
-      renderNewCalendarEntryComponent = <CreateCalendarEntry
-        user={this.state.currentUser} />;
+      // renderNewCalendarEntryComponent = <CreateCalendarEntry
+      //   user={this.state.currentUser} />;
     } else {
       renderNewCalendarEntryComponent = 'Log in to create a new calendar entry';
     }
-    console.log(this.state);
+
     return (
       <div>
         <h1>Firebase Auth Quickstart</h1>
